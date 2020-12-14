@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/createTransporterFragment">
+
+    <fragment
+        android:id="@+id/createTransporterFragment"
+        android:name="com.myetisir.spacetransporter.ui.fragment.create.CreateTransporterFragment"
+        android:label="fragment_create_transporter"
+        tools:layout="@layout/fragment_create_transporter">
+        <action
+            android:id="@+id/action_createTransporterFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.myetisir.spacetransporter.ui.fragment.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+
+</navigation>

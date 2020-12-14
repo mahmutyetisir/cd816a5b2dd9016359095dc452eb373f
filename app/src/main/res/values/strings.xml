@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Space Transporter</string>
+
+
+    <!-- Create Transporter -->
+    <string name="transporter_points_count">Dağıtılacak Puan: </string>
+    <string name="transportor_durability">Dayanıklılık</string>
+    <string name="transporter_speed">Hız</string>
+    <string name="transporter_capacity">Kapasite</string>
+
+    <string name="contiune">Devam Et</string>
+
+    <string name="hello_blank_fragment">jafjşlasjfşlafjlşafjslş</string>
 </resources>
