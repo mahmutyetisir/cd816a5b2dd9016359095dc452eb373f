@@ -29,5 +29,4 @@ class TransporterRepositoryImpl @Inject constructor(private val localDataSource:
             else emit(Resource.Success(transporter))
         }
     }
-
 }

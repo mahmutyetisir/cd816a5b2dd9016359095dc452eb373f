@@ -24,10 +24,22 @@ class HomeViewModel @ViewModelInject constructor(private val transporterReposito
     fun getTransporter() {
         CoroutineScope(Dispatchers.IO).launch {
             transporterRepository.getTransporter().collect {
-                viewModelScope.launch {
-                    _transporter.value = it
+                if (it is Resource.Success) {
+                    viewModelScope.launch {
+                        _transporter.value = it
+                    }
                 }
             }
         }
+        /*viewModelScope.launch {
+            val transporter = withContext(Dispatchers.IO) {
+                transporterRepository.getTransporter()
+            }
+            transporter.collectLatest {
+                withContext(Dispatchers.Main) {
+                    _transporter.value = it
+                }
+            }
+        }*/
     }
 }

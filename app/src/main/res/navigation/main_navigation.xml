@@ -12,6 +12,9 @@
         tools:layout="@layout/fragment_create_transporter">
         <action
             android:id="@+id/action_createTransporterFragment_to_homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/main_navigation"
+            app:popUpToInclusive="true"
             app:destination="@id/homeFragment" />
     </fragment>
 

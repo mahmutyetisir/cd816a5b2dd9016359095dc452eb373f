@@ -7,9 +7,11 @@ data class Station(
     val coordinateX: Double,
     val coordinateY: Double,
     val capacity: Int,
-    val stock: Int,
-    val need: Int
+    var stock: Int,
+    var need: Int
 ) {
+    var eus: Int? = null
+    var isCurrentStation = false
 
     fun toEntity(): StationEntity {
         return StationEntity(

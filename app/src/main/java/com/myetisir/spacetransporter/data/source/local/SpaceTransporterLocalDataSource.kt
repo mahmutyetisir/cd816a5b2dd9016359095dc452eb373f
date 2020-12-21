@@ -14,6 +14,8 @@ interface SpaceTransporterLocalDataSource {
     suspend fun insertStation(station: Station)
 
     suspend fun getAllStation(): List<Station>
+
+    suspend fun deleteStation(stationName: String)
 }
 
 class SpaceTransporterLocalDataSourceImpl @Inject constructor(
@@ -30,7 +32,7 @@ class SpaceTransporterLocalDataSourceImpl @Inject constructor(
     }
 
     override suspend fun insertStation(station: Station) {
-        stationDao.insertChannel(station.toEntity())
+        stationDao.insertStation(station.toEntity())
     }
 
     override suspend fun getAllStation(): List<Station> {
@@ -39,6 +41,10 @@ class SpaceTransporterLocalDataSourceImpl @Inject constructor(
             list.add(currentStation.toObject())
         }
         return list
+    }
+
+    override suspend fun deleteStation(stationName: String) {
+        stationDao.deleteStationByName(stationName)
     }
 
 }

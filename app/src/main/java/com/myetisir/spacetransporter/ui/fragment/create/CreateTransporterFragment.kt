@@ -9,8 +9,7 @@ import android.widget.SeekBar
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.myetisir.spacetransporter.R
-import com.myetisir.spacetransporter.common.click
-import com.myetisir.spacetransporter.common.toast
+import com.myetisir.spacetransporter.common.hideKeyboard
 import com.myetisir.spacetransporter.databinding.FragmentCreateTransporterBinding
 import com.myetisir.spacetransporter.ui.fragment.base.BaseFragment
 import com.myetisir.spacetransporter.util.Resource
@@ -50,15 +49,9 @@ class CreateTransporterFragment :
                         ?.navigate(R.id.action_createTransporterFragment_to_homeFragment)
                 }
                 is Resource.Error -> {
-                    requireActivity().toast(it.exception.message)
-                }
-                Resource.Loading -> {
+                    showInfoPopup(it.exception.message)
                 }
             }
-        })
-
-        viewModel.transporter.observe(this, {
-
         })
 
         viewModel.points.observe(this, {
@@ -119,5 +112,13 @@ class CreateTransporterFragment :
         override fun afterTextChanged(s: Editable?) {
             viewModel.updateTransporterName(s.toString())
         }
+    }
+
+    override fun onPause() {
+        binding?.edtxtTransporterName?.apply {
+            clearFocus()
+            context.hideKeyboard(this)
+        }
+        super.onPause()
     }
 }

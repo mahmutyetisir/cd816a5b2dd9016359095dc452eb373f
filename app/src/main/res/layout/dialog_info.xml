@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        style="@style/itemStationViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:elevation="8dp"
+        android:foregroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dialog_error_icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignTop="@+id/dialog_error_txt_title"
+                    android:layout_alignBottom="@+id/dialog_error_txt_message"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_info" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/dialog_error_txt_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/dialog_error_icon"
+                    android:text="@string/dialog_error_title_text"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/dialog_error_txt_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dialog_error_txt_title"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@+id/dialog_error_icon"
+                    android:text="@string/dialog_error_text" />
+
+            </RelativeLayout>
+
+            <com.myetisir.spacetransporter.ui.custom.GeneralButton
+                android:id="@+id/dialog_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="@string/dialog_ok_text" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -12,5 +12,8 @@ interface StationDao {
     fun getAllStation(): List<StationEntity>
 
     @Insert
-    suspend fun insertChannel(station: StationEntity)
+    suspend fun insertStation(station: StationEntity)
+
+    @Query("DELETE FROM Stations WHERE name = :name")
+    suspend fun deleteStationByName(name: String)
 }

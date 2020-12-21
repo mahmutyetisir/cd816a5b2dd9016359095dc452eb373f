@@ -21,7 +21,7 @@ abstract class BaseDataSource(private val context: Context) {
                 return error(e.localizedMessage ?: e.toString())
             }
         } else {
-            Resource.Error(ConnectionError("hata! internet"))
+            Resource.Error(ConnectionError("Internet bağlantınız yok"))
         }
     }
 

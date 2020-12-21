@@ -8,13 +8,16 @@ import com.myetisir.spacetransporter.data.model.Transporter
 import com.myetisir.spacetransporter.data.repository.TransporterRepository
 import com.myetisir.spacetransporter.util.Resource
 import com.myetisir.spacetransporter.viewmodel.base.BaseViewModel
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class CreateTransporterViewModel @ViewModelInject constructor(private val transporterRepository: TransporterRepository) :
     BaseViewModel() {
+    private val UGS = 10000
+    private val EUS = 20
+    private val DS = 10000
 
     private val _transporter = MutableLiveData<Transporter>()
     val transporter: LiveData<Transporter>
@@ -75,10 +78,10 @@ class CreateTransporterViewModel @ViewModelInject constructor(private val transp
     }
 
     fun checkTransporterIsCreated() {
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             transporterRepository.getTransporter().collect {
                 if (it is Resource.Success) {
-                    viewModelScope.launch {
+                    withContext(Dispatchers.Main) {
                         _navigateHome.value = Resource.Success(true)
                     }
                 }
@@ -100,9 +103,9 @@ class CreateTransporterViewModel @ViewModelInject constructor(private val transp
                     transporterRepository.insertTransporter(
                         Transporter(
                             name,
-                            tempDurability.data,
-                            tempSpeed.data,
-                            tempCapacity.data
+                            tempDurability.data * DS,
+                            tempSpeed.data * EUS,
+                            tempCapacity.data * UGS
                         )
                     )
                 }

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.myetisir.spacetransporter.common.toast
 import com.myetisir.spacetransporter.databinding.FragmentHomeBinding
 import com.myetisir.spacetransporter.ui.fragment.base.BaseFragment
@@ -22,6 +23,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun onViewCreated(savedInstanceState: Bundle?) {
         viewModel.getTransporter()
+
+        childFragmentManager.fragments.first()?.findNavController()
+            ?.let { navController ->
+                binding?.bottomNav?.apply {
+                    setupWithNavController(navController)
+                }
+            }
     }
 
     override fun observeViewModel() {
@@ -31,10 +39,18 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
                     requireActivity().toast("loading data")
                 }
                 is Resource.Success -> {
-                    binding?.txtTranspoerte?.text = it.data.name
+                    //binding?.txtTranspoerte?.text = it.data.name
                 }
             }
         })
+    }
+
+    fun showBottomNavigation() {
+        binding?.bottomNav?.visible()
+    }
+
+    fun hideBottomNavigation() {
+        binding?.bottomNav?.invisible()
     }
 
 }

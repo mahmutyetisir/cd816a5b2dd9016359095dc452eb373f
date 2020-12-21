@@ -76,7 +76,7 @@
                         android:id="@+id/edtxtTransporterName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/transporter_points_count"
+                        android:hint="@string/transporter_name"
                         android:inputType="text"
                         android:lines="1" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -142,7 +142,7 @@
 
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <com.myetisir.spacetransporter.ui.custom.GeneralButton
         android:id="@+id/btnContiune"
         android:layout_width="match_parent"
         android:layout_height="72dp"

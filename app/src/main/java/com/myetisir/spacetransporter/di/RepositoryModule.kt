@@ -1,9 +1,6 @@
 package com.myetisir.spacetransporter.di
 
-import com.myetisir.spacetransporter.data.repository.MainRepository
-import com.myetisir.spacetransporter.data.repository.MainRepositoryImpl
-import com.myetisir.spacetransporter.data.repository.TransporterRepository
-import com.myetisir.spacetransporter.data.repository.TransporterRepositoryImpl
+import com.myetisir.spacetransporter.data.repository.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -21,4 +18,8 @@ abstract class RepositoryModule {
     @Singleton
     @Binds
     abstract fun provideTransporterRepository(transporterRepositoryImpl: TransporterRepositoryImpl): TransporterRepository
+
+    @Singleton
+    @Binds
+    abstract fun provideStationRepository(stationRepositoryImpl: StationRepositoryImpl): StationRepository
 }

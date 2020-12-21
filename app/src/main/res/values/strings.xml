@@ -3,12 +3,23 @@
 
 
     <!-- Create Transporter -->
+    <string name="transporter_name">Gemi İsmi</string>
     <string name="transporter_points_count">Dağıtılacak Puan: </string>
     <string name="transportor_durability">Dayanıklılık</string>
     <string name="transporter_speed">Hız</string>
     <string name="transporter_capacity">Kapasite</string>
 
-    <string name="contiune">Devam Et</string>
+    <string name="station_title">İstasyon</string>
 
-    <string name="hello_blank_fragment">jafjşlasjfşlafjlşafjslş</string>
+    <string name="contiune">Devam Et</string>
+    <string name="travel">Seyahat Et</string>
+
+    <string name="dialog_error_title_text">Uyarı</string>
+    <string name="dialog_error_text">Bir hata ile karşılaşıldı</string>
+    <string name="dialog_ok_text">Tamam</string>
+
+    <string name="splash_activity_info">Splash Screen</string>
+
+    <string name="favorite_title">Favoriler</string>
+    <string name="favorite_empty_list_info">Hiç favori gezegeniniz bulunmamakta.</string>
 </resources>
