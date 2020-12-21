@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
+import com.myetisir.spacetransporter.common.click
 import com.myetisir.spacetransporter.common.hideKeyboard
 import com.myetisir.spacetransporter.data.model.Station
 import com.myetisir.spacetransporter.data.model.TravelStatus

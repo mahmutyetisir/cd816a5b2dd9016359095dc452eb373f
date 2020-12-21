@@ -9,6 +9,7 @@ import android.widget.SeekBar
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.myetisir.spacetransporter.R
+import com.myetisir.spacetransporter.common.click
 import com.myetisir.spacetransporter.common.hideKeyboard
 import com.myetisir.spacetransporter.databinding.FragmentCreateTransporterBinding
 import com.myetisir.spacetransporter.ui.fragment.base.BaseFragment

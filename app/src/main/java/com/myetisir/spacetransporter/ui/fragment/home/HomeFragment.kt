@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.myetisir.spacetransporter.common.invisible
 import com.myetisir.spacetransporter.common.toast
+import com.myetisir.spacetransporter.common.visible
 import com.myetisir.spacetransporter.databinding.FragmentHomeBinding
 import com.myetisir.spacetransporter.ui.fragment.base.BaseFragment
 import com.myetisir.spacetransporter.util.Resource

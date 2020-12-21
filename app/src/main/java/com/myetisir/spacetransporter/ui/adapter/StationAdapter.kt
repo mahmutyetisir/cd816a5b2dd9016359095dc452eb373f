@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.myetisir.spacetransporter.common.invisible
+import com.myetisir.spacetransporter.common.visible
 import com.myetisir.spacetransporter.data.model.Station
 import com.myetisir.spacetransporter.databinding.ItemStationBinding
 

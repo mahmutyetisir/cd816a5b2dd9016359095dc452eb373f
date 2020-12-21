@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.myetisir.spacetransporter.common.invisible
+import com.myetisir.spacetransporter.common.visible
 import com.myetisir.spacetransporter.data.model.Station
 import com.myetisir.spacetransporter.databinding.FragmentFavoriteBinding
 import com.myetisir.spacetransporter.ui.adapter.FavoriteStationAdapter
