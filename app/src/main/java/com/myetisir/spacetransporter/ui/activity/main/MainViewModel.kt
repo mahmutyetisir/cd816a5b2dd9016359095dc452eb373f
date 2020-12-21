@@ -41,14 +41,6 @@ class MainViewModel @ViewModelInject constructor(
         }
     }
 
-    private fun updateStations(station: Station) {
-        val stations = _stations.value
-        if (stations != null && stations is Resource.Success) {
-            stations.data.firstOrNull { it.name == station.name }?.need = station.need
-            _stations.postValue(stations)
-        }
-    }
-
 
     private val _transporter = MutableLiveData<Resource<Transporter>>()
     val transporter: LiveData<Resource<Transporter>>

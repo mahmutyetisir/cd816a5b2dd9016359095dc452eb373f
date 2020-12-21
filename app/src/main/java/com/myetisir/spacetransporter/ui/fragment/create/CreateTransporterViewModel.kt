@@ -98,6 +98,10 @@ class CreateTransporterViewModel @ViewModelInject constructor(private val transp
                 _navigateHome.value =
                     Resource.Error(Throwable("Puanlarınızın hepsini kullanmadınız"))
             }
+            tempDurability.data == 0 || tempSpeed.data == 0 || tempCapacity.data == 0 -> {
+                _navigateHome.value =
+                    Resource.Error(Throwable("Puanlarınızdan hiçbiri 0 olmamalıdır"))
+            }
             else -> {
                 viewModelScope.launch {
                     transporterRepository.insertTransporter(
